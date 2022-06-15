@@ -31,7 +31,9 @@ namespace ProjetoIMCFinal
 
             Console.WriteLine("\nQual o seu peso atual?");
             peso = double.Parse(Console.ReadLine());
-            Console.WriteLine("\nOk " + nome + ", aos poucos estamos te conhecendo melhor");
+            Console.WriteLine("\nEstamos te conhecendo melhor " + nome + ".");
+
+
 
 
         }
