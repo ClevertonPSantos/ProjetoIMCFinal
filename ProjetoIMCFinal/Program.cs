@@ -24,6 +24,12 @@ namespace ProjetoIMCFinal
             Console.WriteLine("\nQual a sua idade?");
             idade = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nOk " + nome + ", já anotamos a sua idade de " + idade + " anos");
+
+            Console.WriteLine("\nQual a sua altura?");
+            altura = double.Parse(Console.ReadLine());
+            Console.WriteLine("\n Ok " + nome + ", agora sabemos que sua altura é " + altura);
+
+
         }
     }
 }
