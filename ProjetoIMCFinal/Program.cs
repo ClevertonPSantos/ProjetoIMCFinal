@@ -21,6 +21,10 @@ namespace ProjetoIMCFinal
             nome = Console.ReadLine();
             Console.WriteLine("\nTudo bem " + nome +", vamos continuar...");
 
+            Console.WriteLine("\nQual o seu sexo, masculino ou feminino?");
+            sexo = Console.ReadLine();
+            Console.WriteLine("Sabemos agora que você é do sexo " + sexo);
+           
             Console.WriteLine("\nQual a sua idade?");
             idade = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nOk " + nome + ", já anotamos a sua idade de " + idade + " anos");
@@ -33,9 +37,10 @@ namespace ProjetoIMCFinal
             peso = double.Parse(Console.ReadLine());
             Console.WriteLine("\nEstamos te conhecendo melhor " + nome + ".");
 
+            Console.WriteLine("\n"+ nome + ", Agora temos os seguintes dados seu:");
+            Console.WriteLine("\nVocê é do sexo " + sexo + ", você tem " + idade + " anos, a sua altura é " + altura + " e seu peso é " + peso + "Kg.");
 
-
-
+            
         }
     }
 }
