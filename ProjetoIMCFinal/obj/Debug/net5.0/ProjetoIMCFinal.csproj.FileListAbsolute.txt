@@ -1,0 +1,16 @@
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.exe
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.deps.json
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.runtimeconfig.json
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.runtimeconfig.dev.json
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.dll
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\bin\Debug\net5.0\ProjetoIMCFinal.pdb
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.csproj.AssemblyReference.cache
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.AssemblyInfoInputs.cache
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.AssemblyInfo.cs
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.csproj.CoreCompileInputs.cache
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.dll
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\refint\ProjetoIMCFinal.dll
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.pdb
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ProjetoIMCFinal.genruntimeconfig.cache
+C:\Users\jay & cleverton\Desktop\Desafio Final .net\ProjetoIMCFinal\ProjetoIMCFinal\obj\Debug\net5.0\ref\ProjetoIMCFinal.dll
