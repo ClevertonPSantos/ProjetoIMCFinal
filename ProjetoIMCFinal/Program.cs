@@ -27,7 +27,11 @@ namespace ProjetoIMCFinal
 
             Console.WriteLine("\nQual a sua altura?");
             altura = double.Parse(Console.ReadLine());
-            Console.WriteLine("\n Ok " + nome + ", agora sabemos que sua altura é " + altura);
+            Console.WriteLine("\nOk " + nome + ", agora sabemos que sua altura é " + altura);
+
+            Console.WriteLine("\nQual o seu peso atual?");
+            peso = double.Parse(Console.ReadLine());
+            Console.WriteLine("\nOk " + nome + ", aos poucos estamos te conhecendo melhor");
 
 
         }
