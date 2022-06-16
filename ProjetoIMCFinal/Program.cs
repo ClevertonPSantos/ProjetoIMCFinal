@@ -11,6 +11,7 @@ namespace ProjetoIMCFinal
             string sexo;
             int idade;
             double altura, peso, resultAltura;
+            string categoria;
             
             
             Console.WriteLine("\nSeja bem vindo(a), irei conhecer um pouco melhor você. Vamos começar!!!");
@@ -20,10 +21,22 @@ namespace ProjetoIMCFinal
             nome = Console.ReadLine();
             Console.WriteLine("\nTudo bem " + nome +", vamos continuar...");
 
-            Console.WriteLine("\nQual o seu sexo, masculino ou feminino?");
+            Console.WriteLine("\nQual é o seu sexo?");
             sexo = Console.ReadLine();
-            Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
-           
+
+            if ((sexo == "masculino") && (sexo == "Masculino"))
+            {
+                Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
+            }
+            else if ((sexo == "feminino") && (sexo == "Feminino"))
+            {
+                Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
+            }
+            else if ((sexo != "masculino") && (sexo != "feminino") && (sexo != "Masculino") && (sexo != "Feminino"))
+            {
+                Console.WriteLine("Digite um sexo valido");
+            }
+
             Console.WriteLine("\nQual a sua idade?");
             idade = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nOk " + nome + ", já anotamos a sua idade de " + idade + " anos");
@@ -34,10 +47,24 @@ namespace ProjetoIMCFinal
 
             Console.WriteLine("\nQual o seu peso atual?");
             peso = double.Parse(Console.ReadLine());
-            Console.WriteLine("\nEstamos te conhecendo melhor " + nome + ".");
+           
+            Console.Clear();
 
+            if (idade < 12)
+                Console.WriteLine(nome + "\n, você se econtra na categoria Infantil");
+
+            if (idade >= 12 && idade <= 20)
+                Console.WriteLine(nome + "\nVocê se econtra na categoria Juvenil");
+
+            if (idade > 20 && idade <= 65)
+                Console.WriteLine(nome + "\nVocê se econtra na categoria Adulto");
+
+            if (idade > 65)
+                Console.WriteLine(nome + "\nVocê se econtra na categoria: Idoso");
+            
             Console.WriteLine("\n"+ nome + ", Agora temos os seguintes dados seu:");
-            Console.WriteLine("\nVocê é do sexo " + sexo + ", você tem " + idade + " anos, a sua altura é " + altura + " e seu peso é " + peso + "Kg.");
+            Console.WriteLine("\nVocê é do sexo " + sexo + ", você tem " + idade + " anos, a sua altura é " + altura + "m e seu peso é " + peso + "Kg.");
+
 
             //calculos do IMC
 
@@ -45,27 +72,35 @@ namespace ProjetoIMCFinal
             double imc;
             imc = peso / resultAltura;
 
-            
-            Console.WriteLine("\nSeu IMC é: " + Math.Round(imc, 2).ToString());
+            Console.WriteLine("\nSeu IMC é: " + Math.Round(imc, 2).ToString() + "\n");
+
 
             //Aqui vamos ver em qual das opções o IMC se encontra
-            if (imc <= 18)
-                Console.WriteLine("O seu IMC está abaixo do normal");
+            if (imc < 20)
+                Console.WriteLine("\nO seu IMC está abaixo do normal");
+                Console.Write("\nRiscos para sua saúde:\nMuitas complicações de saúde como doenças pulmonares e " +
+                    "cardiovasculares podem estar associados ao baixo peso\n\n");
 
-            if (imc > 18 && imc <= 25)
-                Console.WriteLine("O seu IMC está normal.");
+            if (imc >= 20 && imc <= 24)
+                Console.WriteLine("\nO seu IMC encontra-se normal.");
 
-            if (imc > 25 && imc <= 30)
-                Console.WriteLine("O seu IMC está acima do normal.");
+            if (imc > 24 && imc < 30)
+                Console.WriteLine("\nO seu IMC encontra-se acima do normal.");
 
-            if (imc > 30 && imc <= 35)
-                Console.WriteLine("O seu IMC está bem acima do normal, é recomendado você procurar ajuda medica.");
+            if (imc >= 30 && imc < 34)
+                Console.WriteLine("\nO seu IMC encontra-se bem acima do normal, é recomendado você procurar ajuda medica.");
 
-            if (imc > 35 && imc <= 40)
-                Console.WriteLine("O seu IMC está muito acima do esperado, procure ajuda médica.");
+            if (imc >= 35)
+                Console.WriteLine("\nO seu IMC encontra-se muito acima do esperado, procure ajuda médica.");
 
-            if (imc > 40)
-                Console.WriteLine("O seu IMC está MUITO ACIMA do esperado, por favor procure um médico urgente.");
+            //Aqui vamos ver em qual categoria a pessoa se enquadra
+
+            
+
+            
+
+
+
         }
     }
 }
