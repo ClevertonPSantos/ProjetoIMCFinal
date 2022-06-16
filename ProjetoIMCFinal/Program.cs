@@ -14,7 +14,6 @@ namespace ProjetoIMCFinal
             double peso = 0;
             double resultAltura;
             string categoria = "";
-            string sexodefinido = "";
 
 
             Console.WriteLine("\nSeja bem vindo(a), irei conhecer um pouco melhor você. Vamos começar!!!");
@@ -66,6 +65,7 @@ namespace ProjetoIMCFinal
 
             }
             //Aqui eu usei o TryParse para que se for usado espaço ou campo vazio retorne e faça a pergunta novamente
+            //Utilizei Replace para caso o usuário use o ponto entre os valores ele passe a usar vírgula
             while (peso <= 0)
             {
                 Console.Write("\nDigite o seu peso atual: ");
@@ -78,7 +78,7 @@ namespace ProjetoIMCFinal
             }
 
 
-            //Aqui vamos ver em qual categoria a pessoa se enquadra
+            //Aqui vamos ver em qual categoria a pessoa se enquadra conforme a sua idade
 
             if (idade < 12)
             {
@@ -98,6 +98,7 @@ namespace ProjetoIMCFinal
             }
             Console.Clear();
 
+            //Aqui sera impresso todos os dados coletados anteriormente
             Console.WriteLine("DIAGNÓSTICO PRÉVIO");
             Console.WriteLine("\nNome: " + nome + "\nSexo: " + sexo + "\nIdade: " + idade + " anos \nAltura: " + altura +
                  " m \nPeso: " + peso + " Kg \nCategoria: " + categoria);
@@ -108,11 +109,12 @@ namespace ProjetoIMCFinal
             double imc;
             imc = peso / resultAltura;
 
+            //Depois que for feito o calculo ele vai imprimir o valor com 2 casas após a vírgula
             Console.WriteLine("\nIMC Desejável: entre 20 e 24");
             Console.WriteLine("\nSeu IMC é: " + Math.Round(imc, 2).ToString() + "\n");
 
 
-            //Aqui vamos ver em qual das opções o IMC se encontra, riscos e indicações
+            //Aqui vamos ver em qual das opções o IMC se encontra, sugerindo os riscos e recomendações
 
             //Caso o imc da pessoa for menor que 20 ele entra nesse if, se não entra no proximo
             if (imc < 20)
@@ -141,14 +143,15 @@ namespace ProjetoIMCFinal
 
             }
 
-            //Caso imc da pessoa seja maior ou igual a 30 ele entra nesse if, se não entra no proximo
-            if (imc >= 30 && imc < 34)
+            //Caso imc da pessoa seja maior ou igual a 30 e menor que 35 ele entra nesse if, se não entra no proximo
+            if (imc >= 30 && imc < 35)
             {
                 Console.WriteLine("\nO seu IMC encontra-se bem acima do normal.\n\nRiscos para sua saúde:\nQuem tem obesidade vai " +
                     "estar mais exposto a doenças graves e ao risco de mortalidade.\n\nRecomendação inicial:\n" +
                     "Adote uma dieta alimentar rigorosa, com acompanhamento de um nutricionista e um médico especialista (endócrino).");
 
             }
+            //Caso imc da pessoa seja maior que ou igual a 35 ele entra nesse if sendo o último if
             if (imc >= 35)
             {
                 Console.WriteLine("\nO seu IMC encontra-se muito acima do esperado.\n\nRiscos para sua saúde:\nO obeso mórbido" +
