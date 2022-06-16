@@ -34,18 +34,12 @@ namespace ProjetoIMCFinal
             //Foi usado o IsNullWhiteSpace para evitar que o usuário entre com espaço ou campo vazio
             while (string.IsNullOrWhiteSpace(sexo))
             {
-                Console.Write("\nDigite seu sexo M (masculino) ou F (feminino): ");
+                Console.Write("\nDigite seu sexo (masculino) ou (feminino): ");
                 sexo = Console.ReadLine();
-
-                if ((sexo == "m") && (sexo == "M"))
+                if (string.IsNullOrWhiteSpace(sexo))
                 {
-                    sexodefinido = "Masculino";
+                    Console.WriteLine("Digite um valor válido");
                 }
-                if ((sexo == "f") && (sexo == "F"))
-                {
-                    sexodefinido = "Feminino";
-                }
-
             }
 
             //Aqui eu usei o TryParse para que se for usado espaço ou campo vazio retorne e faça a pergunta novamente
@@ -59,7 +53,8 @@ namespace ProjetoIMCFinal
                 }
             }
 
-            //
+            //Aqui eu usei o TryParse para que se for usado espaço ou campo vazio retorne e faça a pergunta novamente
+            //Utilizei Replace para caso o usuário use o ponto entre os valores ele passe a usar vírgula
             while (altura <= 0)
             {
                 Console.Write("\nDigite a sua altura: ");
@@ -70,7 +65,7 @@ namespace ProjetoIMCFinal
                 }
 
             }
-
+            //Aqui eu usei o TryParse para que se for usado espaço ou campo vazio retorne e faça a pergunta novamente
             while (peso <= 0)
             {
                 Console.Write("\nDigite o seu peso atual: ");
@@ -104,7 +99,7 @@ namespace ProjetoIMCFinal
             Console.Clear();
 
             Console.WriteLine("DIAGNÓSTICO PRÉVIO");
-            Console.WriteLine("\nNome: " + nome + "\nSexo: " + sexodefinido + "\nIdade: " + idade + " anos \nAltura: " + altura +
+            Console.WriteLine("\nNome: " + nome + "\nSexo: " + sexo + "\nIdade: " + idade + " anos \nAltura: " + altura +
                  " m \nPeso: " + peso + " Kg \nCategoria: " + categoria);
 
             //calculos do IMC
@@ -113,7 +108,7 @@ namespace ProjetoIMCFinal
             double imc;
             imc = peso / resultAltura;
 
-            Console.WriteLine("IMC Desejável: entre 20 e 24");
+            Console.WriteLine("\nIMC Desejável: entre 20 e 24");
             Console.WriteLine("\nSeu IMC é: " + Math.Round(imc, 2).ToString() + "\n");
 
 
