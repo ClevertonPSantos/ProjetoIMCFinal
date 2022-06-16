@@ -7,45 +7,62 @@ namespace ProjetoIMCFinal
         static void Main(string[] args)
         {
             //Primeiro vamos criar as variáveis
-            string nome;
+            string nome = "";
             string sexo;
-            int idade;
+            int idade = 0;
             double altura, peso, resultAltura;
             string categoria = "";
-            
-            
+
+
             Console.WriteLine("\nSeja bem vindo(a), irei conhecer um pouco melhor você. Vamos começar!!!");
 
             //Pedir os dados iniciais e fazer as validações
-            Console.WriteLine("\nQual o seu nome?");
-            nome = Console.ReadLine();
-            Console.WriteLine("\nTudo bem " + nome +", vamos continuar...");
-
-            Console.WriteLine("\nQual é o seu sexo?");
+            while (string.IsNullOrEmpty(nome))
+            {
+                Console.WriteLine("\nQual o seu nome?");
+                nome = Console.ReadLine();
+                if (string.IsNullOrEmpty(nome))
+                {
+                    Console.WriteLine("Digite um nome válido");
+                }
+            }
+            Console.WriteLine("\nDigite seu sexo M (masculino) ou F (feminino)?");
             sexo = Console.ReadLine();
 
-            if ((sexo == "masculino") && (sexo == "Masculino"))
+            if ((sexo == "m") && (sexo == "M"))
             {
                 Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
             }
-            else if ((sexo == "feminino") && (sexo == "Feminino"))
+            else if ((sexo == "f") && (sexo == "F"))
             {
                 Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
             }
-            else if ((sexo != "masculino") && (sexo != "feminino") && (sexo != "Masculino") && (sexo != "Feminino"))
+
+
+
+
+            while (idade <= 0)
             {
-                Console.WriteLine("Digite um sexo valido");
-                
+                Console.WriteLine("\nQual a sua idade?");
+                int.TryParse(Console.ReadLine(), out idade);
+                if (idade <= 0)
+                {
+                    Console.WriteLine("Digite um valor válido");
+                }
             }
-
-            Console.WriteLine("\nQual a sua idade?");
-            idade = Convert.ToInt32(Console.ReadLine());
-
             Console.WriteLine("\nQual a sua altura?");
             altura = double.Parse(Console.ReadLine());
+            if (altura == 0)
+            {
+                Console.WriteLine("Digite um valor válido");
+            }
 
             Console.WriteLine("\nQual o seu peso atual?");
             peso = double.Parse(Console.ReadLine());
+            if (peso == 0)
+            {
+                Console.WriteLine("Digite um valor válido");
+            }
 
 
             //Aqui vamos ver em qual categoria a pessoa se enquadra
@@ -123,9 +140,9 @@ namespace ProjetoIMCFinal
 
             }
 
-            
 
-            
+
+
 
 
 
