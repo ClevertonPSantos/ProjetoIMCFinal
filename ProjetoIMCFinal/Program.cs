@@ -8,60 +8,78 @@ namespace ProjetoIMCFinal
         {
             //Primeiro vamos criar as variáveis
             string nome = "";
-            string sexo;
-            int idade = 0;
-            double altura, peso, resultAltura;
+            string sexo = "";
+            double idade = 0;
+            double altura = 0;
+            double peso = 0;
+            double resultAltura;
             string categoria = "";
+            string sexodefinido = "";
 
 
             Console.WriteLine("\nSeja bem vindo(a), irei conhecer um pouco melhor você. Vamos começar!!!");
 
-            //Pedir os dados iniciais e fazer as validações
-            while (string.IsNullOrEmpty(nome))
+            //Pedir os dados iniciais e fazer as validações 
+            //Foi usado o IsNullWhiteSpace para evitar que o usuário entre com espaço ou campo vazio
+            while (string.IsNullOrWhiteSpace(nome))
             {
-                Console.WriteLine("\nQual o seu nome?");
+                Console.Write("\nQual o seu nome: ");
                 nome = Console.ReadLine();
-                if (string.IsNullOrEmpty(nome))
+                if (string.IsNullOrWhiteSpace(nome))
                 {
                     Console.WriteLine("Digite um nome válido");
                 }
             }
-            Console.WriteLine("\nDigite seu sexo M (masculino) ou F (feminino)?");
-            sexo = Console.ReadLine();
 
-            if ((sexo == "m") && (sexo == "M"))
+            //Foi usado o IsNullWhiteSpace para evitar que o usuário entre com espaço ou campo vazio
+            while (string.IsNullOrWhiteSpace(sexo))
             {
-                Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
+                Console.Write("\nDigite seu sexo M (masculino) ou F (feminino): ");
+                sexo = Console.ReadLine();
+
+                if ((sexo == "m") && (sexo == "M"))
+                {
+                    sexodefinido = "Masculino";
+                }
+                if ((sexo == "f") && (sexo == "F"))
+                {
+                    sexodefinido = "Feminino";
+                }
+
             }
-            else if ((sexo == "f") && (sexo == "F"))
-            {
-                Console.WriteLine("\nSabemos agora que você é do sexo " + sexo);
-            }
 
-
-
-
+            //Aqui eu usei o TryParse para que se for usado espaço ou campo vazio retorne e faça a pergunta novamente
             while (idade <= 0)
             {
-                Console.WriteLine("\nQual a sua idade?");
-                int.TryParse(Console.ReadLine(), out idade);
+                Console.Write("\nDigite a sua idade: ");
+                double.TryParse(Console.ReadLine(), out idade);
                 if (idade <= 0)
                 {
                     Console.WriteLine("Digite um valor válido");
                 }
             }
-            Console.WriteLine("\nQual a sua altura?");
-            altura = double.Parse(Console.ReadLine());
-            if (altura == 0)
+
+            //
+            while (altura <= 0)
             {
-                Console.WriteLine("Digite um valor válido");
+                Console.Write("\nDigite a sua altura: ");
+                double.TryParse(Console.ReadLine().Replace(".",","), out altura);
+                if (altura <= 0)
+                {
+                    Console.WriteLine("Digite um valor válido");
+                }
+
             }
 
-            Console.WriteLine("\nQual o seu peso atual?");
-            peso = double.Parse(Console.ReadLine());
-            if (peso == 0)
+            while (peso <= 0)
             {
-                Console.WriteLine("Digite um valor válido");
+                Console.Write("\nDigite o seu peso atual: ");
+                double.TryParse(Console.ReadLine().Replace(".",","), out peso);
+                if (peso <= 0)
+                {
+                    Console.WriteLine("Digite um valor válido");
+                }
+
             }
 
 
@@ -85,8 +103,8 @@ namespace ProjetoIMCFinal
             }
             Console.Clear();
 
-            Console.WriteLine("\nDIAGNÓSTICO PRÉVIO");
-            Console.WriteLine("\nNome: " + nome + "\nSexo: " + sexo + "\nIdade: " + idade + " anos \nAltura: " + altura +
+            Console.WriteLine("DIAGNÓSTICO PRÉVIO");
+            Console.WriteLine("\nNome: " + nome + "\nSexo: " + sexodefinido + "\nIdade: " + idade + " anos \nAltura: " + altura +
                  " m \nPeso: " + peso + " Kg \nCategoria: " + categoria);
 
             //calculos do IMC
@@ -100,6 +118,8 @@ namespace ProjetoIMCFinal
 
 
             //Aqui vamos ver em qual das opções o IMC se encontra, riscos e indicações
+
+            //Caso o imc da pessoa for menor que 20 ele entra nesse if, se não entra no proximo
             if (imc < 20)
             {
                 Console.WriteLine("\nO seu IMC está abaixo do normal.\n\nRiscos para sua saúde:\nMuitas complicações de saúde como doenças pulmonares e " +
@@ -108,6 +128,7 @@ namespace ProjetoIMCFinal
 
             }
 
+            //Caso imc da pessoa de maior ou igual 20 e menor ou igual a 24 ele entra nesse if, se não entra no proximo
             if (imc >= 20 && imc <= 24)
             {
                 Console.WriteLine("\nO seu IMC encontra-se normal.\n\nRiscos para sua saúde:\nSeu peso está ideal para suas referências." +
@@ -115,6 +136,7 @@ namespace ProjetoIMCFinal
 
             }
 
+            //Caso imc da pessoa de maior que 24 e menor que 30 ele entra nesse if, se não entra no proximo
             if (imc > 24 && imc < 30)
             {
                 Console.WriteLine("\nO seu IMC encontra-se acima do normal.\n\nRiscos para sua saúde:\nAumento de peso" +
@@ -124,6 +146,7 @@ namespace ProjetoIMCFinal
 
             }
 
+            //Caso imc da pessoa seja maior ou igual a 30 ele entra nesse if, se não entra no proximo
             if (imc >= 30 && imc < 34)
             {
                 Console.WriteLine("\nO seu IMC encontra-se bem acima do normal.\n\nRiscos para sua saúde:\nQuem tem obesidade vai " +
